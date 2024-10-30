@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Fogón de la Parrilla</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e9e3e3, #a3a1a3);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background-color: #ffffff1a;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            }
+        nav {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        nav a {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            color: rgb(10, 10, 10);
+        }
+        .table-section {
+            position: relative;
+            overflow: hidden;
+            height: 330px; /* Altura del carrusel */
+            margin: 0; /* Elimina márgenes laterales */
+            width: 100%; /* Asegúrate que el contenedor ocupe todo el ancho disponible */
+            padding: 0; /* Elimina padding si lo hay */
+        }
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+            width: 100%; /* Asegúrate que el carrusel ocupe todo el ancho disponible */
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        /* Animación para el carrusel */
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(0); }
+            40% { transform: translateX(-100%); }
+            73% { transform: translateX(-100%); }
+            80% { transform: translateX(-200%); }
+            100% { transform: translateX(-200%); }
+        }
+        .slides {
+            animation: slide 12s infinite; /* Duración total de la animación */
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 50px 0;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.151);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px 8px 0 0;
+        }
+        .card h3 {
+            margin: 15px 0;
+        }
+        .card button {
+            background-color: #4d7add;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>El Fogón de la Parrilla</h1>
+        <nav>
+            <a href="#menu">Menú</a>
+            <a href="#reservacion">Reservación</a>
+            <a href="https://lc-lucass.github.io/">Contáctanos</a>
+            <a href="#envios">Envíos</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="table-section">
+            <div class="carousel slides">
+                <div class="slide" style="background-image: url('https://enter.travel/portodegalinhas/wp-content/uploads/sites/2/2019/01/churrasco-gaucho-restaurante-porto-de-galinhas-portada.jpg');"></div>
+                <div class="slide" style="background-image: url('https://elchurrasco.com/wp-content/uploads/2023/03/img-salon.jpg');"></div>
+                <div class="slide" style="background-image: url('https://lugaresconestrella.com/wp-content/uploads/003-DETALLE-DEL-COMEDOR-DE-ENTRADA-PATIO.jpg');"></div>
+            </div>
+            <h2 style="position: absolute; color: white; top: 50%; left: 50%; transform: translate(-50%, -50%);">Bienvenido a El Fogón de la Parrilla</h2>
+            <p style="position: absolute; color: white; top: 70%; left: 50%; transform: translate(-50%, -50%);">Disfruta de una experiencia gastronómica única con nuestras mejores carnes a la parrilla.</p>
+        </div>
+
+        <!-- Grid Section for Cards -->
+        <div class="grid-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://img.freepik.com/fotos-premium/sabroso-plato-comida-brasilena-churrasco-fondo-blanco-aislado_741910-28844.jpg" alt="Churrasco Brasilero">
+                <h3>Churrasco Brasilero</h3>
+                <p>Disfruta de una selección de las mejores carnes asadas a la perfección.</p>
+                <button onclick="openModal('modal1')">Más Información</button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://imag.bonviveur.com/churrasco-de-ternera-a-la-parrilla-listo-para-degustar.jpg" alt="Ternera a la parrilla">
+                <h3>Ternera a la parrilla</h3>
+                <p>Prueba nuestros cortes premium seleccionados por expertos parrilleros.</p>
+                <button onclick="openModal('modal2')">Más Información</button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://www.ternascodearagon.es/wp-content/uploads/2022/04/churrasco-laqueado.jpg" alt="Churrasco laqueado">
+                <h3>Churrasco laqueado al estilo oriental</h3>
+                <p>Un banquete de carnes ideal para compartir con familia y amigos.</p>
+                <button onclick="openModal('modal3')">Más Información</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Parrilla Clásica</h2>
+            <p>Seleccionamos las mejores carnes para ser asadas a la parrilla tradicional. ¡Una experiencia que no te puedes perder!</p>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Cortes Especiales</h2>
+            <p>Prueba nuestros cortes de carne premium, seleccionados por expertos para los paladares más exigentes.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Parrilladas para Compartir</h2>
+            <p>Disfruta de una experiencia social con nuestras parrilladas diseñadas para compartir entre amigos y familiares.</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera del contenido
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <body>
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2024 El fogon de la parrilla. Todos los derechos reservados.</p>
+            <p><a href="privacy.html">Política de privacidad</a> | <a href="terms.html">Términos de servicio</a></p>
+        </footer>
+    
+    </body>
+
+</body>
+</html>
